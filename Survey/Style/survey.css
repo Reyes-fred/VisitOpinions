@@ -1,0 +1,41 @@
+form#smileys input[type="radio"] {
+             -webkit-appearance: none;
+             width: 90px;
+             height: 90px;
+             border: none;
+             cursor: pointer;
+             -webkit-transition: border .2s ease;
+             transition: border .2s ease;
+             -webkit-filter: grayscale(100%);
+             filter: grayscale(100%);
+             margin: 0 5px;
+             -webkit-transition: all .2s ease;
+             transition: all .2s ease;
+          
+         }
+         form#smileys input[type="radio"]:hover, form#smileys input[type="radio"]:checked {
+             -webkit-filter: grayscale(0);
+             filter: grayscale(0);
+         }
+         form#smileys input[type="radio"]:focus {
+            outline: 0;
+         }
+         form#smileys input[type="radio"].excelente {
+             background: url("../images/assets/excelente.svg") center;
+             background-size: cover;
+         }
+         form#smileys input[type="radio"].bueno {
+             background: url("../images/assets/bueno.svg") center;
+             background-size: cover;
+         }
+         form#smileys input[type="radio"].regular {
+             background: url("../images/assets/regular.svg") center;
+             background-size: cover;
+         }
+         form#smileys input[type="radio"].malo {
+             background: url("../images/assets/malo.svg") center;
+             background-size: cover;
+         }
+
+
+       
