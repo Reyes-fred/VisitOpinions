@@ -25,8 +25,10 @@
                     <header>
                         <h1>Visitor Center</h1><br>
                         <p>Encuesta te Satisfacción.</p>
+                        <textarea id="nombre" placeholder="Introduce tu Nombre o el de tu Escuela"></textarea>
                     </header>
                     <ul class="actions">
+                        <br>
                         <li><a href="#one" class="button next">Iniciar</a>
                         </li>
                     </ul> 
@@ -36,27 +38,28 @@
                 <img src="images/background.jpg" alt="" data-position="center" />
                 <div class="inner">
                     <h2>1. ¿Nos gustaría saber qué les pareció el recorrido?</h2>
-                          <form id="smileys">
-                             <input type="radio" name="smiley" value="malo" class="malo">
-                             <input type="radio" name="smiley" value="regular" class="regular">
-                             <input type="radio" name="smiley" value="bueno" class="bueno"> 
-                             <input type="radio" name="smiley" value="excelente" class="excelente" checked="checked">
+                          <form id="smileys" name="q1" method="post">
+                             <input type="radio" name="a1" value="malo" class="malo">
+                             <input type="radio" name="a1" value="regular" class="regular">
+                             <input type="radio" name="a1" value="bueno" class="bueno"> 
+                             <input type="radio" name="a1" value="excelente" class="excelente" checked="checked">
                           </form>
-                           <p>Malo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <p>Malo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                              Regular &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                               Bueno &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                               Excelente</p>
+                    
                   </div>
             </article>
             <article id="two" class="slide style2 center">
                 <img src="images/background.jpg" alt="" data-position="center" />
                 <div class="inner">
                     <h2>2. ¿Se les hizo útil e interesante la plática?</h2>
-                          <form id="smileys">
-                             <input type="radio" name="smiley" value="malo" class="malo">
-                             <input type="radio" name="smiley" value="regular" class="regular">
-                             <input type="radio" name="smiley" value="bueno" class="bueno"> 
-                             <input type="radio" name="smiley" value="excelente" class="excelente" checked="checked">
+                          <form id="smileys" name="q2" method="post">
+                             <input type="radio" name="a2" value="malo" class="malo">
+                             <input type="radio" name="a2" value="regular" class="regular">
+                             <input type="radio" name="a2" value="bueno" class="bueno"> 
+                             <input type="radio" name="a2" value="excelente" class="excelente" checked="checked">
                           </form>
                           <p>Malo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                              Regular &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -68,13 +71,13 @@
                 <img src="images/background.jpg" alt="" data-position="center" />
                 <div class="inner">
                     <h2>3. ¿Tuvo relación con las expectativas que tenían?</h2>
-                          <form id="smileys">
-                             <input type="radio" name="smiley" value="malo" class="malo">
-                             <input type="radio" name="smiley" value="regular" class="regular">
-                             <input type="radio" name="smiley" value="bueno" class="bueno"> 
-                             <input type="radio" name="smiley" value="excelente" class="excelente" checked="checked">
+                          <form id="smileys" name="q3" method="post">
+                             <input type="radio" name="a3" value="malo" class="malo">
+                             <input type="radio" name="a3" value="regular" class="regular">
+                             <input type="radio" name="a3" value="bueno" class="bueno"> 
+                             <input type="radio" name="a3" value="excelente" class="excelente" checked="checked">
                           </form>
-                          <p>Malo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <p>Malo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                              Regular &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                               Bueno &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                               Excelente</p>
@@ -84,11 +87,11 @@
                 <img src="images/background.jpg" alt="" data-position="center" />
                 <div class="inner">
                     <h2>4. ¿Cómo se sintieron con la atención brindada por parte del personal de Intel?</h2>
-                          <form id="smileys">
-                             <input type="radio" name="smiley" value="malo" class="malo">
-                             <input type="radio" name="smiley" value="regular" class="regular">
-                             <input type="radio" name="smiley" value="bueno" class="bueno"> 
-                             <input type="radio" name="smiley" value="excelente" class="excelente" checked="checked">
+                          <form id="smileys" name="q4" method="post">
+                             <input type="radio" name="a4" value="malo" class="malo">
+                             <input type="radio" name="a4" value="regular" class="regular">
+                             <input type="radio" name="a4" value="bueno" class="bueno"> 
+                             <input type="radio" name="a4" value="excelente" class="excelente" checked="checked">
                           </form>
                           <p>Malo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                              Regular &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -100,12 +103,54 @@
                 <img src="images/background.jpg" alt="" data-position="center" />
                 <div class="inner">
                     <h2>Gracias por tu Visita, Esperamos verlos pronto.</h2>
-                    <li><a href="index.html" class="button">Enviar Respuestas</a>
+                    <input type="button" value="Enviar Respuestas" onclick="submitForms()" />
                  </div>               
             </article>
         </div>
     </div>
  
 </body>
+    
+    <script>
+        submitForms = function(){
+            var a1,a2,a3,a4;
+            var radios = document.getElementsByName('a1');
+            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    a1=radios[i].value;
+                    break;
+                }
+            }
+            
+            radios = document.getElementsByName('a2');
+            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    a2=radios[i].value;
+                    break;
+                }
+            }
+            
+            radios = document.getElementsByName('a3');
+            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    a3=radios[i].value;
+                    break;
+                }
+            }
+            
+            radios = document.getElementsByName('a4');
+            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    a4=radios[i].value;
+                    break;
+                }
+            }
+  
+        nombre = document.getElementById("nombre").value;
+        window.location.href = "Php/excel.php?nombre=" + nombre + "&a1=" + a1 + "&a2=" + a2+ "&a3=" + a3+ "&a4=" + a4;
+       
+           
+        }   
+    </script>
 
 </html>
