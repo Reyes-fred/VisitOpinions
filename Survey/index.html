@@ -99,7 +99,30 @@
                               Excelente</p>
                 </div>               
             </article>
-            <article id="five" class="slide style2 center">
+           <article id="five" class="slide style2 center">
+                <img src="images/background.jpg" alt="" data-position="center" />
+                <div class="inner">
+                    <h2>5. ¿En que area consideras que podemos mejorar?</h2>
+                          <form id="smileys" name="q5" method="post">
+                             <input type="radio" name="a5" value="Platica" class="regular">
+                             <input type="radio" name="a5" value="Museo/Recorrido" class="bueno"> 
+                             <input type="radio" name="a5" value="Ninguno" class="excelente" checked="checked">
+                          </form>
+                          <p>Platica &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             Museo/Recorrido &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             Ninguna, todo me parecio bien</p>
+                </div>               
+            </article>
+          <article id="six" class="slide style1 center">
+                <img src="images/background.jpg" alt="" data-position="0% 50%" />
+                <div class="inner" >
+                    <header>
+                        <h2>6. ¿Que calificacion nos darias?</h2><br>
+                        <textarea id="calif" placeholder="Si 0 es lo mas bajo y 10 es lo mas alto"></textarea>
+                    </header>
+                </div>
+            </article>
+            <article id="seven" class="slide style2 center">
                 <img src="images/background.jpg" alt="" data-position="center" />
                 <div class="inner">
                     <h2>Gracias por tu Visita, Esperamos verlos pronto.</h2>
@@ -113,7 +136,7 @@
     
     <script>
         submitForms = function(){
-            var a1,a2,a3,a4;
+            var a1,a2,a3,a4,a5;
             var radios = document.getElementsByName('a1');
             for (var i = 0, length = radios.length; i < length; i++) {
                 if (radios[i].checked) {
@@ -145,9 +168,18 @@
                     break;
                 }
             }
+
+	   radios = document.getElementsByName('a5');
+            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    a5=radios[i].value;
+                    break;
+                }
+            }
   
         nombre = document.getElementById("nombre").value;
-        window.location.href = "Php/excel.php?nombre=" + nombre + "&a1=" + a1 + "&a2=" + a2+ "&a3=" + a3+ "&a4=" + a4;
+        calif = document.getElementById("calif").value;
+        window.location.href = "Php/excel.php?nombre=" + nombre + "&a1=" + a1 + "&a2=" + a2+ "&a3=" + a3+ "&a4=" + a4 + "&a5=" + a5 + "&calif=" + calif;
        
            
         }   
