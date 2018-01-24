@@ -36,6 +36,19 @@ form#smileys input[type="radio"] {
              background: url("../images/assets/malo.svg") center;
              background-size: cover;
          }
+         form#smileys input[type="radio"].platica {
+             background: url("../images/assets/conference.svg") center;
+             background-size: cover;
+         }
+         form#smileys input[type="radio"].museo {
+             background: url("../images/assets/museum.svg") center;
+             background-size: cover;
+         }
+         form#smileys input[type="radio"].ninguno {
+             background: url("../images/assets/bueno.svg") center;
+             background-size: cover;
+         }
+
 
 
        
