@@ -113,11 +113,18 @@
                              Ninguna, todo me pareció bien</p>
                 </div>               
             </article>
+           <article id="five" class="slide style2 center">
+                <img src="images/background.jpg" alt="" data-position="center" />
+                <div class="inner">
+                    <h2>6. ¿Por qué?</h2>
+                        <textarea type="number" id="como" maxlength="2"  placeholder="Si tu respuesta fue NINGUNA dejalo en blanco"></textarea>  
+                </div>               
+            </article>
           <article id="six" class="slide style1 center">
                 <img src="images/background.jpg" alt="" data-position="0% 50%" />
                 <div class="inner" >
                     <header>
-                        <h2>6. ¿Que calificación nos darías?</h2><br>
+                        <h2>7. ¿Que calificación nos darías?</h2><br>
                         <textarea type="number" id="calif" maxlength="2"  placeholder="Si 0 es lo mas bajo y 10 es lo mas alto"></textarea>
                     </header>
                 </div>
@@ -179,7 +186,8 @@
   
         nombre = document.getElementById("nombre").value;
         calif = document.getElementById("calif").value;
-        window.location.href = "Php/excel.php?nombre=" + nombre + "&a1=" + a1 + "&a2=" + a2+ "&a3=" + a3+ "&a4=" + a4 + "&a5=" + a5 + "&calif=" + calif;
+        como = document.getElementById("como").value;
+        window.location.href = "Php/excel.php?nombre=" + nombre + "&a1=" + a1 + "&a2=" + a2+ "&a3=" + a3+ "&a4=" + a4 + "&a5=" + a5 + "&calif=" + calif + "&como=" + como;
        
            
         }   
